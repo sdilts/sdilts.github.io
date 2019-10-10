@@ -4,12 +4,9 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
-
-### More Information
-
-A place to include any other types of information that you'd like to include about yourself.
+Just another tech blog on the internet. Here you will find posts on compilers, cool projects,
+and maybe even a tutorial or two.
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[stuart.dilts@gmail.com](mailto:stuart.dilts@gmail.com)
