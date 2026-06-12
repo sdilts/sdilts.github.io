@@ -33,7 +33,13 @@ To determine what systems are available, ASDF uses a *source-registry*. This lay
 
 Once we setup the source registry, we can use `asdf:find-system` to load our target system. With the system object returned by that function, we can recursively call `asdf:system-depends-on` and `asdf:find-system` on each dependency to determine what systems are present and which ones need to be downloaded. How deeply we go and for which systems depends on the system manager chosen.
 
-There is a catch to using `asdf:find-system`; ASDF systems can require other systems at definition time, and we need to be ready to install them as we traverse the dependency tree. This leads to a satisfying use of CL's signal system:
+There are a few things we need to take care of before we start building our list of missing systems. First, if we loaded the current code via ASDF, we need to remove it and its dependencies from the ASDF cache:
+
+``` lisp
+;; code goes here
+```
+
+Secondly, ASDF systems can require other systems at definition time. We need to install them as we traverse the dependency tree, which leads to a satisfying use of CL's signal system:
 
 ``` lisp
 ;; code goes here
