@@ -31,7 +31,7 @@ To determine what systems are available, ASDF uses a *source-registry*. This lay
 + The location of any vendored dependencies
 + The location where our system manager downloads systems to.
 
-Once we setup the source registry, we can use `asdf:find-system` to load our target system. Once we have the system object returned by that function, we can recursively call `asdf:system-depends-on`on each system to determine what systems are present and which ones need to be downloaded. How deeply we go and for which systems depends on the system manager chosen.
+Once we setup the source registry, we can use `asdf:find-system` to load our target system. With the system object returned by that function, we can recursively call `asdf:system-depends-on` and `asdf:find-system` on each dependency to determine what systems are present and which ones need to be downloaded. How deeply we go and for which systems depends on the system manager chosen.
 
 There is a catch to using `asdf:find-system`; ASDF systems can require other systems at definition time, and we need to be ready to install them as we traverse the dependency tree. This leads to a satisfying use of CL's signal system:
 
