@@ -84,7 +84,7 @@ The next step is to generate a ninja build file that can run our build step and 
 
 ## Footnotes
 
-[^final-image]: Using the described process, the final image will still include ASDF. Removing would involve a similar process, but with gathering all the required files instead of just the dependencies. Due to ASDF being able to process non-CL targets, you'd probably need to avoid using it in the target system and use a build system that loads files by calling a lisp subprocesses.
+[^final-image]: Using the described process, the final image will still include ASDF. Removing it would involve a similar process, but with gathering all the required files instead of just the dependencies. Due to ASDF being able to process non-CL targets, you'd probably need to avoid using it in the target system and use a build system that loads files by calling a lisp subprocesses.
 
 [^system-manager]: Most other languages would call this a package manager, but since `package` means something different in CL, we avoid that term.
 
