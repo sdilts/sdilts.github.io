@@ -63,7 +63,7 @@ We are now done with the current lisp process, and it's time for building our ac
 
 ## Step 3: Building the system
 
-We can now kickoff the build process. First, we need to setup the same source registry as we did in step 1. If we dumped the configuration to a file, we can just load it. After calling `asdf:make`, we will have our final executable.
+We can now kickoff the build process. First, we need to setup the same source registry as we did in step 1. If we dumped the configuration to a file, we can just load it. After calling `asdf:make`[^asdf-make], we will have our final executable.
 
 ``` lisp
 (load "init-build-env.lisp")
@@ -82,6 +82,10 @@ That's quite a lot for what is normally a simpler process, but it's all with the
 
 The next step is to generate a ninja build file that can run our build step and keep everything up to date as our files change.
 
+## Footnotes
+
 [^final-image]: Using the described process, the final image will still include ASDF. Removing would involve a similar process, but with gathering all the required files instead of just the dependencies. Due to ASDF being able to process non-CL targets, you'd probably need to avoid using it in the target system and use a build system that loads files by calling a lisp subprocesses.
 
 [^system-manager]: Most other languages would call this a package manager, but since `package` means something different in CL, we avoid that term.
+
+[^asdf-make]: You need to configure your ASDF system to make this produce an executable; see https://lispcookbook.github.io/cl-cookbook/scripting.html#with-asdf.
