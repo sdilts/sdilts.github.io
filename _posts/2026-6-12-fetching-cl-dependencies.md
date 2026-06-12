@@ -23,7 +23,7 @@ This sounds easy enough, but let's explore the APIs and mechanics of doing this.
 
 ## Build tooling
 
-ASDF is the de-facto build system of CL, and acts sort like Java's old-school build tool, Ant. It's responsible for building the individual components of a system, but can't download any dependencies it can't find. To do that, we need a *system manager*[^system-manager]. There are lots to choose from, including CLPM, qlot, quicklisp, and ocicl. Which one is used affects some details of this process; to make things easier, let's assume that the system manager has the proper dependency trees built in.
+ASDF is the de-facto build system of CL, and acts similar Java's old-school build tool, Ant. It's responsible for building the individual components of a system, but can't download any dependencies it can't find. To do that, we need a *system manager*[^system-manager]. There are lots to choose from, including CLPM, qlot, quicklisp, and ocicl. Which one is used affects some details of this process; to make things easier, let's assume that the system manager has the proper dependency trees built in.
 
 ## Step 1: Finding Dependencies
 
