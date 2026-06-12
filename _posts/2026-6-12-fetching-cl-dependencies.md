@@ -2,7 +2,7 @@
 
 I recently set out to create a meta build system for Common Lisp projects, and ran into a problem I didn't expect: fetching the dependencies for a project can get complicated quickly.
 
-First, some background. When building an executable out of a lisp system, there is usually only one approach available: dumping the running lisp image to disk. This isn't ideal, as it means that the build system infrastructure gets included in the final executable. If you download your system's dependencies and build your image within the same process, it means that the ability to download code from the internet also gets included in your system! This may be useful for projects that expose a REPL to users, but it also means that if you pulled in your changes with ocicl but you users want to use qlot to manage their own dependencies, they can't.
+First, some background. When building an executable out of a common lisp system, there is usually only one approach available: dumping the running lisp image to disk. This isn't ideal, as it means that the build system infrastructure gets included in the final executable. If you download your system's dependencies and build your image within the same process, it means that the ability to download code from the internet also gets included in your system! This may be useful for projects that expose a REPL to users, but it also means that if you pulled in your changes with ocicl but you users want to use qlot to manage their own dependencies, they can't.
 
 Therefore, one of the goals of this build system is to completely separate building a CL project into 2 distinct steps:
 
